@@ -10,9 +10,8 @@ namespace AdventCode.NoSpaceLeftOnDevice
                 .Split($"{Environment.NewLine}")
                 .ToList();
 
-            // Part1
+            // Build the directory structure
             Directory currentDirectory = new Directory("/", null);
-
             foreach (var instruction in data)
             {
                 var instructionElements = instruction.Split(' ');
@@ -48,14 +47,34 @@ namespace AdventCode.NoSpaceLeftOnDevice
                     currentDirectory.FileSizes.Add(int.Parse(instructionElements[0]));
                 }
             }
-
             Console.WriteLine($"Finished building directory structure!");
+
+            // Part 1:
+            //currentDirectory = currentDirectory.GetDirectoryOrParentDirectoryWithName("/");
+            //Console.WriteLine(currentDirectory.GetSumOfFileSizesFromAllDirsWithFilesBelowThreshold(100000));
+
+            // Part 2:
             currentDirectory = currentDirectory.GetDirectoryOrParentDirectoryWithName("/");
-            Console.WriteLine(currentDirectory.GetSumOfFileSizesFromAllDirsWithFilesBelowThreshold(100000));
+            int totalDiskSpace = 70000000;
+            int totalFreeSpaceNeeded = 30000000;
+            int totalSizeOfAllCurrentFiles = currentDirectory.GetTotalSizeOfAllFilesInDirectoryAndSubDirectories();
+            Console.WriteLine($"Total size of all current files: {totalSizeOfAllCurrentFiles}");
+            int currentTotalFreeSpace = totalDiskSpace - totalSizeOfAllCurrentFiles;
+            int neededFreeSpace = totalFreeSpaceNeeded - currentTotalFreeSpace;
+            Console.WriteLine($"Need to free up: {neededFreeSpace}");
+            List<int> directoryFileSizes = new List<int>();
+            currentDirectory.BuildDirectoryWithSizesDataset(directoryFileSizes);
+            directoryFileSizes = directoryFileSizes.OrderBy(x => x).ToList();
+            Console.WriteLine($"{directoryFileSizes.FirstOrDefault(x => x > neededFreeSpace)}");
         }
 
         public class Directory
         {
+            public string Name { get; set; }
+            public Directory ParentDirectory { get; set; }
+            public List<Directory> SubDirectories { get; set; }
+            public List<int> FileSizes { get; set; }
+
             public Directory(string name, Directory parentDirectory)
             {
                 Name = name;
@@ -64,19 +83,14 @@ namespace AdventCode.NoSpaceLeftOnDevice
                 FileSizes = new List<int>();
             }
 
-            public string Name { get; set; }
-            public Directory ParentDirectory { get; set; }
-            public List<Directory> SubDirectories { get; set; }
-            public List<int> FileSizes { get; set; }
-
             public override string ToString()
             {
                 StringBuilder sb = new StringBuilder();
                 sb.AppendLine($"\t {Name} - total size of all files in this dir and all sub dirs - {GetTotalSizeOfAllFilesInDirectoryAndSubDirectories()}");
 
-                //sb.AppendLine($"\t {Files.Count()} Files:");
-                //foreach (var file in Files)
-                //    sb.AppendLine($"\t {file}");
+                sb.AppendLine($"\t {FileSizes.Count()} Files:");
+                foreach (var file in FileSizes)
+                    sb.AppendLine($"\t {file}");
 
                 sb.AppendLine($"\t {SubDirectories.Count()} Sub Directories:");
                 foreach (var directory in SubDirectories)
@@ -108,7 +122,7 @@ namespace AdventCode.NoSpaceLeftOnDevice
 
             public Directory GetDirectoryOrParentDirectoryWithName(string name)
             {
-                if (Name == name) // If already in the directory of this name
+                if (Name == name)
                     return this;
                 else if (ParentDirectory.Name == name)
                     return ParentDirectory;
@@ -126,6 +140,13 @@ namespace AdventCode.NoSpaceLeftOnDevice
                 sum += SubDirectories.Select(x => x.GetSumOfFileSizesFromAllDirsWithFilesBelowThreshold(threshold)).Sum();
 
                 return sum;
+            }
+
+            public void BuildDirectoryWithSizesDataset(List<int> directorySizes)
+            {
+                directorySizes.Add(GetTotalSizeOfAllFilesInDirectoryAndSubDirectories());
+                foreach(var directory in SubDirectories)
+                    directory.BuildDirectoryWithSizesDataset(directorySizes);
             }
         }
     }
