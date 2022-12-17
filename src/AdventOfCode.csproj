@@ -11,6 +11,9 @@
     <None Update="ElfCalories\input.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Update="NoSpaceLeftOnDevice\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Update="RockPaperScissors\input.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
