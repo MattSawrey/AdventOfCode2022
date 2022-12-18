@@ -4,4 +4,5 @@
 //AdventCode.CampCleanup.Task.Run(); // Day 4
 //AdventOfCode.SupplyStacks.Task.Run(); // Day 5
 //AdventOfCode.TuningTrouble.Task.Run(); // Day 6
-AdventCode.NoSpaceLeftOnDevice.Task.Run(); // Day 7
+//AdventCode.NoSpaceLeftOnDevice.Task.Run(); // Day 7
+AdventOfCode.TreetopTreeHouse.Task.Run(); // Day 8

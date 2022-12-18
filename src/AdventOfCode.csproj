@@ -26,6 +26,9 @@
     <None Update="SupplyStacks\input.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Update="TreetopTreeHouse\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Update="TuningTrouble\input.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
