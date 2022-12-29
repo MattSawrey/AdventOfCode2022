@@ -1,9 +1,9 @@
-﻿//AdventCode.ElfCalories.Task.Run(); // Day 1
-//AdventCode.RockPaperScissors.Task.Run(); // Day 2
-//AdventCode.RucksackReorg.Task.Run(); // Day 3
-//AdventCode.CampCleanup.Task.Run(); // Day 4
-//AdventOfCode.SupplyStacks.Task.Run(); // Day 5
-//AdventOfCode.TuningTrouble.Task.Run(); // Day 6
-//AdventCode.NoSpaceLeftOnDevice.Task.Run(); // Day 7
-//AdventOfCode.TreetopTreeHouse.Task.Run(); // Day 8
-AdventOfCode.RopeBridge.Task.Run(); // Day 9
+﻿AdventCode.Day1ElfCalories.Task.Run();
+AdventCode.Day2RockPaperScissors.Task.Run();
+AdventCode.Day3RucksackReorg.Task.Run();
+AdventCode.Day4CampCleanup.Task.Run();
+AdventOfCode.Day5SupplyStacks.Task.Run();
+AdventOfCode.Day6TuningTrouble.Task.Run();
+AdventCode.Day7NoSpaceLeftOnDevice.Task.Run();
+AdventOfCode.Day8TreetopTreeHouse.Task.Run();
+AdventOfCode.Day9RopeBridge.Task.Run();

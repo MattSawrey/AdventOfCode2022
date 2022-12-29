@@ -12,31 +12,31 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Update="ElfCalories\input.txt">
+    <None Update="Day1ElfCalories\input.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Update="NoSpaceLeftOnDevice\input.txt">
+    <None Update="Day7NoSpaceLeftOnDevice\input.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Update="RockPaperScissors\input.txt">
+    <None Update="Day2RockPaperScissors\input.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Update="RopeBridge\input.txt">
+    <None Update="Day9RopeBridge\input.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Update="RucksackReorg\input.txt">
+    <None Update="Day3RucksackReorg\input.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Update="CampCleanup\input.txt">
+    <None Update="Day4CampCleanup\input.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Update="SupplyStacks\input.txt">
+    <None Update="Day5SupplyStacks\input.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Update="TreetopTreeHouse\input.txt">
+    <None Update="Day8TreetopTreeHouse\input.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Update="TuningTrouble\input.txt">
+    <None Update="Day6TuningTrouble\input.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>

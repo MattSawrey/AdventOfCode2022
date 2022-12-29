@@ -1,4 +1,4 @@
-﻿namespace AdventCode.RucksackReorg
+﻿namespace AdventCode.Day3RucksackReorg
 {
     public static class Task
     {
@@ -21,13 +21,13 @@
         public static void Run()
         {
             // Part 1:
-            var data1 = File.ReadAllText($"{Directory.GetCurrentDirectory()}\\RucksackReorg\\input.txt")
+            var data = File.ReadAllText($"{Directory.GetCurrentDirectory()}\\Day3RucksackReorg\\input.txt")
                 .Split(Environment.NewLine)
                 .Select(items => new Rucksack(items))
                 .ToList();
 
             var sum1 = 0;
-            foreach (var rucksack in data1)
+            foreach (var rucksack in data)
             {
                 // There is only ever 1 match between the compartments
                 var character = rucksack.Compartment1.Intersect(rucksack.Compartment2).FirstOrDefault();
@@ -40,22 +40,17 @@
             Console.WriteLine($"Challenge 1: {sum1}");
 
             // Part 2:
-            var data2 = File.ReadAllText($"{Directory.GetCurrentDirectory()}\\RucksackReorg\\input.txt")
-                .Split(Environment.NewLine)
-                .Select(x => new Rucksack(x))
-                .ToList();
-
             var sum2 = 0;
-            while (data2.Any())
+            while (data.Any())
             {
-                var top3Rucksacks = data2.Take(3).Select(x => x.Items).ToList();
+                var top3Rucksacks = data.Take(3).Select(x => x.Items).ToList();
                 var character = top3Rucksacks.Aggregate<IEnumerable<char>>((a, b) => a.Intersect(b)).FirstOrDefault();
                 var value = GetAlphabetIndexOfChar(character);
                 if (char.IsUpper(character))
                     value += numCharsInAlphabet;
 
                 sum2 += value;
-                data2.RemoveRange(0, 3);
+                data.RemoveRange(0, 3);
             }
             Console.WriteLine($"Challenge 2: {sum2}");
         }

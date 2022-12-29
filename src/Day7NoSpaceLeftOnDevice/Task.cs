@@ -1,12 +1,12 @@
 ﻿using System.Text;
 
-namespace AdventCode.NoSpaceLeftOnDevice
+namespace AdventCode.Day7NoSpaceLeftOnDevice
 {
     public static class Task
     {
         public static void Run()
         {
-            var data = File.ReadAllText($"{System.IO.Directory.GetCurrentDirectory()}\\NoSpaceLeftOnDevice\\input.txt")
+            var data = File.ReadAllText($"{System.IO.Directory.GetCurrentDirectory()}\\Day7NoSpaceLeftOnDevice\\input.txt")
                 .Split($"{Environment.NewLine}")
                 .ToList();
 

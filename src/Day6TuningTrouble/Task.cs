@@ -1,10 +1,10 @@
-﻿namespace AdventOfCode.TuningTrouble
+﻿namespace AdventOfCode.Day6TuningTrouble
 {
     public static class Task
     {
         public static void Run()
         {
-            var data = File.ReadAllText($"{Directory.GetCurrentDirectory()}\\TuningTrouble\\input.txt");
+            var data = File.ReadAllText($"{Directory.GetCurrentDirectory()}\\Day6TuningTrouble\\input.txt");
 
             // Part 1:
             Console.WriteLine($"Part 1: {GetIndexOfEndOfMarkerChar(data, 4)}");

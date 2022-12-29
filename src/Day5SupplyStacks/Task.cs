@@ -1,6 +1,6 @@
 ﻿using System.Text;
 
-namespace AdventOfCode.SupplyStacks
+namespace AdventOfCode.Day5SupplyStacks
 {
     public static class Task
     {
@@ -41,7 +41,7 @@ namespace AdventOfCode.SupplyStacks
 
         public static void Run()
         {
-            var data = File.ReadAllText($"{Directory.GetCurrentDirectory()}\\SupplyStacks\\input.txt")
+            var data = File.ReadAllText($"{Directory.GetCurrentDirectory()}\\Day5SupplyStacks\\input.txt")
                 .Split(Environment.NewLine)
                 .Select(row => row.Split(' '))
                 .Select(x => new Instruction(int.Parse(x[1]), int.Parse(x[3]), int.Parse(x[5])))
@@ -74,10 +74,7 @@ namespace AdventOfCode.SupplyStacks
 
             Console.WriteLine("Part 2:");
             foreach (var stack in crateStacks)
-            {
                 Console.Write($"{stack.Pop()}");
-            }
-
         }
     }
 }

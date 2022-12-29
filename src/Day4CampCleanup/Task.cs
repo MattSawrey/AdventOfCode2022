@@ -1,13 +1,13 @@
 ﻿using System.Text;
 
-namespace AdventCode.CampCleanup
+namespace AdventCode.Day4CampCleanup
 {
     public static class Task
     {
         public static void Run()
         {
             // Part 1:
-            var data1 = File.ReadAllText($"{Directory.GetCurrentDirectory()}\\CampCleanup\\input.txt")
+            var data1 = File.ReadAllText($"{Directory.GetCurrentDirectory()}\\Day4CampCleanup\\input.txt")
                 .Split(Environment.NewLine)
                 .Select(x => x.Split(',')
                               .Select(y => y.Split('-'))

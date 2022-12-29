@@ -1,4 +1,4 @@
-﻿namespace AdventCode.RockPaperScissors
+﻿namespace AdventCode.Day2RockPaperScissors
 {
     public static class Task
     {
@@ -25,7 +25,7 @@
         public static void Run()
         {
             // Part 1:
-            var data1 = File.ReadAllText($"{Directory.GetCurrentDirectory()}\\RockPaperScissors\\input.txt")
+            var data1 = File.ReadAllText($"{Directory.GetCurrentDirectory()}\\Day2RockPaperScissors\\input.txt")
                 .Split(Environment.NewLine)
                 .Select(x => x.Split(" ".ToCharArray(), StringSplitOptions.RemoveEmptyEntries)
                               .ToList())
@@ -42,7 +42,7 @@
             Console.WriteLine($"Total points for player: {totalScore}");
 
             // Part 2:
-            var data2 = File.ReadAllText($"{Directory.GetCurrentDirectory()}\\RockPaperScissors\\input.txt")
+            var data2 = File.ReadAllText($"{Directory.GetCurrentDirectory()}\\Day2RockPaperScissors\\input.txt")
                 .Split(Environment.NewLine)
                 .Select(x => x.Split(" ".ToCharArray(), StringSplitOptions.RemoveEmptyEntries)
                               .ToList())
@@ -62,19 +62,13 @@
 
         private static Shape MapShapeFromInputValue(string value)
         {
-            switch (value)
+            return value switch
             {
-                case "A":
-                case "X":
-                    return Shape.Rock;
-                case "B":
-                case "Y":
-                    return Shape.Paper;
-                case "C":
-                case "Z":
-                    return Shape.Scissors;
-                default: throw new Exception("Shape value not found in mapping from input value.");
-            }
+                "A" or "X" => Shape.Rock,
+                "B" or "Y" => Shape.Paper,
+                "C" or "Z" => Shape.Scissors,
+                _ => throw new Exception("Shape value not found in mapping from input value.")
+            };
         }
 
         // loss = 0
@@ -102,36 +96,25 @@
                 return opponent;
 
             if (opponent == Shape.Scissors)
-            {
-                switch (result)
+                return result switch
                 {
-                    case "X": // Loss
-                        return Shape.Paper;
-                    case "Z": // Victory
-                        return Shape.Rock;
-                }
-            }
+                    "X" => Shape.Paper, // Loss
+                    "Z" => Shape.Rock // Victory
+                };
 
             if (opponent == Shape.Rock)
-            {
-                switch (result)
+                return result switch
                 {
-                    case "X": // Loss
-                        return Shape.Scissors;
-                    case "Z": // Victory
-                        return Shape.Paper;
-                }
-            }
+                    "X" => Shape.Scissors, // Loss
+                    "Z" => Shape.Paper // Victory
+                };
+
             if (opponent == Shape.Paper)
-            {
-                switch (result)
+                return result switch
                 {
-                    case "X": // Loss
-                        return Shape.Rock;
-                    case "Z": // Victory
-                        return Shape.Scissors;
-                }
-            }
+                    "X" => Shape.Rock, // Loss
+                    "Z" => Shape.Scissors // Victory
+                };
 
             throw new Exception("Shape not found from the expected result value.");
         }

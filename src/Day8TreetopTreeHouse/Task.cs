@@ -1,10 +1,10 @@
-﻿namespace AdventOfCode.TreetopTreeHouse
+﻿namespace AdventOfCode.Day8TreetopTreeHouse
 {
     public static class Task
     {
         public static void Run()
         {
-            var forest = File.ReadAllText($"{Directory.GetCurrentDirectory()}\\TreetopTreeHouse\\input.txt")
+            var forest = File.ReadAllText($"{Directory.GetCurrentDirectory()}\\Day8TreetopTreeHouse\\input.txt")
                 .Split(Environment.NewLine);
 
             //int[,] forest = new int[forest.GetLength(0), forest.Length];

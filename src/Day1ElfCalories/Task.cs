@@ -1,10 +1,10 @@
-﻿namespace AdventCode.ElfCalories
+﻿namespace AdventCode.Day1ElfCalories
 {
     public static class Task
     {
         public static void Run()
         {
-            var elfCalories = File.ReadAllText($"{Directory.GetCurrentDirectory()}\\ElfCalories\\input.txt")
+            var elfCalories = File.ReadAllText($"{Directory.GetCurrentDirectory()}\\Day1ElfCalories\\input.txt")
                 .Split($"{Environment.NewLine}{Environment.NewLine}")
                 .Select(x => x.Split(Environment.NewLine)
                               .Select(y => int.Parse(y))

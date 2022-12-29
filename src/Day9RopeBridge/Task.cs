@@ -1,4 +1,4 @@
-﻿namespace AdventOfCode.RopeBridge
+﻿namespace AdventOfCode.Day9RopeBridge
 {
     public struct MovementInstruction
     {
@@ -39,7 +39,7 @@
     {
         public static void Run()
         {
-            var instructions = File.ReadAllText($"{Directory.GetCurrentDirectory()}\\RopeBridge\\input.txt")
+            var instructions = File.ReadAllText($"{Directory.GetCurrentDirectory()}\\Day9RopeBridge\\input.txt")
                 .Split(Environment.NewLine)
                 .Select(x => x.Split(" "))
                 .Select(y => new MovementInstruction(char.Parse(y[0]), int.Parse(y[1])))
