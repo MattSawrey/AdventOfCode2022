@@ -1,4 +1,4 @@
-﻿//AdventOfCode.Day1ElfCalories.Task.Run();
+﻿AdventOfCode.Day1ElfCalories.Task.Run();
 //AdventOfCode.Day2RockPaperScissors.Task.Run();
 //AdventOfCode.Day3RucksackReorg.Task.Run();
 //AdventOfCode.Day4CampCleanup.Task.Run();
@@ -7,4 +7,4 @@
 //AdventOfCode.Day7NoSpaceLeftOnDevice.Task.Run();
 //AdventOfCode.Day8TreetopTreeHouse.Task.Run();
 //AdventOfCode.Day9RopeBridge.Task.Run();
-AdventOfCode.Day10CathodeRayTube.Task.Run();
+//AdventOfCode.Day10CathodeRayTube.Task.Run();
