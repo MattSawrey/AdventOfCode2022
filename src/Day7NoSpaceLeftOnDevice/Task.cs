@@ -1,6 +1,6 @@
 ﻿using System.Text;
 
-namespace AdventCode.Day7NoSpaceLeftOnDevice
+namespace AdventOfCode.Day7NoSpaceLeftOnDevice
 {
     public static class Task
     {

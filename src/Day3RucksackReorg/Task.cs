@@ -1,4 +1,4 @@
-﻿namespace AdventCode.Day3RucksackReorg
+﻿namespace AdventOfCode.Day3RucksackReorg
 {
     public static class Task
     {

@@ -12,6 +12,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Update="Day10CathodeRayTube\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Update="Day1ElfCalories\input.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>

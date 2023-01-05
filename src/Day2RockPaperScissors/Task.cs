@@ -1,4 +1,4 @@
-﻿namespace AdventCode.Day2RockPaperScissors
+﻿namespace AdventOfCode.Day2RockPaperScissors
 {
     public static class Task
     {

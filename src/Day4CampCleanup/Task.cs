@@ -1,6 +1,6 @@
 ﻿using System.Text;
 
-namespace AdventCode.Day4CampCleanup
+namespace AdventOfCode.Day4CampCleanup
 {
     public static class Task
     {
