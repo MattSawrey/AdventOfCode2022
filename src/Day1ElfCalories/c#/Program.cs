@@ -1,6 +1,4 @@
-﻿using System.Collections.Generic;
-
-namespace AdventOfCode.Day1ElfCalories
+﻿namespace AdventOfCode.Day1ElfCalories
 {
     public static class Program
     {

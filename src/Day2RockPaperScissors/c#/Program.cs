@@ -27,6 +27,8 @@
             var inputFileDir = $"{Directory.GetParent(Directory.GetParent(Directory.GetCurrentDirectory())?.FullName)?.FullName}";
 
             // Part 1:
+            Console.WriteLine("Task 1:");
+
             var data1 = File.ReadAllText($"{inputFileDir}\\Day2RockPaperScissors\\input.txt")
                 .Split(Environment.NewLine)
                 .Select(x => x.Split(" ".ToCharArray(), StringSplitOptions.RemoveEmptyEntries)
@@ -39,11 +41,13 @@
             {
                 totalScore += (int)data1[i].PlayerChoice; // add the player choice score
                 totalScore += CalculateResultScore(data1[i].PlayerChoice, data1[i].OpponentChoice); // Add the result score
-                //Console.WriteLine($"Round {i}: Player Choice: {data1[i].PlayerChoice} v Opponent Choice: {data1[i].OpponentChoice}. Points from Player selection: {(int)data1[i].PlayerChoice}. Points from result: {CalculateResultScore(data1[i].PlayerChoice, data1[i].OpponentChoice)}");
+                // Console.WriteLine($"Round {i}: Player Choice: {data1[i].PlayerChoice} v Opponent Choice: {data1[i].OpponentChoice}. Points from Player selection: {(int)data1[i].PlayerChoice}. Points from result: {CalculateResultScore(data1[i].PlayerChoice, data1[i].OpponentChoice)}");
             }
-            Console.WriteLine($"Total points for player: {totalScore}");
+            Console.WriteLine($"Answer: {totalScore}");
 
             // Part 2:
+            Console.WriteLine("Task 2:");
+
             var data2 = File.ReadAllText($"{inputFileDir}\\Day2RockPaperScissors\\input.txt")
                 .Split(Environment.NewLine)
                 .Select(x => x.Split(" ".ToCharArray(), StringSplitOptions.RemoveEmptyEntries)
@@ -58,7 +62,7 @@
                 totalScore += CalculateResultScore(data2[i].PlayerChoice, data2[i].OpponentChoice); // Add the result score
                 //Console.WriteLine($"Round {i}: Player Choice: {data2[i].PlayerChoice} v Opponent Choice: {data2[i].OpponentChoice}. Points from Player selection: {(int)data2[i].PlayerChoice}. Points from result: {CalculateResultScore(data2[i].PlayerChoice, data2[i].OpponentChoice)}");
             }
-            Console.WriteLine($"Total points for player: {totalScore}");
+            Console.WriteLine($"Answer: {totalScore}");
 
         }
 
@@ -101,21 +105,24 @@
                 return result switch
                 {
                     "X" => Shape.Paper, // Loss
-                    "Z" => Shape.Rock // Victory
+                    "Z" => Shape.Rock, // Victory
+                    _ => throw new Exception("Can't parse player shape from char.")
                 };
 
             if (opponent == Shape.Rock)
                 return result switch
                 {
                     "X" => Shape.Scissors, // Loss
-                    "Z" => Shape.Paper // Victory
+                    "Z" => Shape.Paper, // Victory
+                    _ => throw new Exception("Can't parse player shape from char.")
                 };
 
             if (opponent == Shape.Paper)
                 return result switch
                 {
                     "X" => Shape.Rock, // Loss
-                    "Z" => Shape.Scissors // Victory
+                    "Z" => Shape.Scissors, // Victory
+                    _ => throw new Exception("Can't parse player shape from char.")
                 };
 
             throw new Exception("Shape not found from the expected result value.");

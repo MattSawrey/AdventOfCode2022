@@ -60,7 +60,7 @@ int main()
     // printf("MC: %i", maxCalories);
     while (fgets(line, sizeof(line), fpointer) != NULL)
     {
-        if (strlen(line) > 1)
+        if (strlen(line) > 1) // if this line has chars
         {
             char *endptr;
             int num = strtol(line, &endptr, 10);
