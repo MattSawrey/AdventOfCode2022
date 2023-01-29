@@ -55,14 +55,14 @@
                 .Select(y => new Round(MapShapeFromInputValue(y[0]), GetPlayerShapeFromExpectedResult(y[1], MapShapeFromInputValue(y[0]))))
                 .ToList();
 
-            //int totalScore = 0;
+            int totalScore2 = 0;
             for (int i = 0; i < data2.Count; i++)
             {
-                totalScore += (int)data2[i].PlayerChoice; // add the player choice score
-                totalScore += CalculateResultScore(data2[i].PlayerChoice, data2[i].OpponentChoice); // Add the result score
+                totalScore2 += (int)data2[i].PlayerChoice; // add the player choice score
+                totalScore2 += CalculateResultScore(data2[i].PlayerChoice, data2[i].OpponentChoice); // Add the result score
                 //Console.WriteLine($"Round {i}: Player Choice: {data2[i].PlayerChoice} v Opponent Choice: {data2[i].OpponentChoice}. Points from Player selection: {(int)data2[i].PlayerChoice}. Points from result: {CalculateResultScore(data2[i].PlayerChoice, data2[i].OpponentChoice)}");
             }
-            Console.WriteLine($"Answer: {totalScore}");
+            Console.WriteLine($"Answer: {totalScore2}");
 
         }
 

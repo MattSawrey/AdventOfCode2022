@@ -157,6 +157,7 @@ int main()
     FILE *fpointer2 = fopen(filePath, "r"); // r file mode to read contents of the files
     char line2[20];
 
+    int totalScore2 = 0;
     while (fgets(line2, sizeof(line2), fpointer2) != NULL)
     {
         if (strlen(line2) > 1) // if this line has chars
@@ -164,11 +165,11 @@ int main()
             enum Shape opponentShape = shape_from_input_value(line2[0]);
             enum Shape playerShape = shape_from_expected_score(line2[2], opponentShape);
 
-            totalScore += score_from_shape(playerShape);
-            totalScore += score_from_result(playerShape, opponentShape);
+            totalScore2 += score_from_shape(playerShape);
+            totalScore2 += score_from_result(playerShape, opponentShape);
         }
     }
-    printf("Answer: %i\n", totalScore);
+    printf("Answer: %i\n", totalScore2);
 
     fclose(fpointer2);
 
