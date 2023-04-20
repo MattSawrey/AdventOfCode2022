@@ -1,5 +1,6 @@
 ﻿namespace AdventOfCode.Day3RucksackReorg
 {
+    // Assumes that charset is ACII
     public static class Program
     {
         const int numCharsInAlphabet = 26;
